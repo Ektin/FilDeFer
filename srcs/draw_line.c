@@ -6,7 +6,7 @@
 /*   By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:09:17 by Ektin Op Urims    #+#    #+#             */
-/*   Updated: 2023/08/21 20:06:46 by Ektin Op Urims   ###   ########.fr       */
+/*   Updated: 2023/09/20 18:58:56 by Ektin Op Urims   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,20 @@ int	draw_line(t_point_2d const *point1, t_point_2d const *point2, \
 	set_point_2d(&p2, point2);
 	if (1 == adjust_points_for_draw_line(&p1, &p2, data))
 		return (1);
+	if (0 == is_point_inside(&p1, data) || 0 == is_point_inside(&p2, data))
+		return (print_error_after_adjustment(point1, point2, &p1, &p2));
 	dx = p2.x - p1.x;
 	dy = p2.y - p1.y;
 	if (dx > 0 && dy >= 0 && dy <= dx)
 		draw_line_dx_part1(&p1, &p2, color, data);
 	else if (dx > 0 && dy < 0 && 0 <= dx + dy)
 		draw_line_dx_part2(&p1, &p2, color, data);
-	else if (dx < 0 && - dx >= dy && - dx >= -dy)
-		draw_line(&p2, &p1, color, data);
 	else if (dy > 0 && dx >= 0 && dx < dy)
 		draw_line_dy_part1(&p1, &p2, color, data);
 	else if (dy > 0 && dx < 0 && 0 < dx + dy)
 		draw_line_dy_part2(&p1, &p2, color, data);
-	else if (dy < 0 && - dy > dx && - dy > -dx)
+	else if ((dx < 0 && - dx >= dy && - dx >= -dy) \
+		|| (dy < 0 && - dy > dx && - dy > -dx))
 		draw_line(&p2, &p1, color, data);
 	return (0);
 }

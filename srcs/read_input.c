@@ -6,7 +6,7 @@
 /*   By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 13:11:17 by Ektin Op Urims    #+#    #+#             */
-/*   Updated: 2023/08/21 14:30:36 by Ektin Op Urims   ###   ########.fr       */
+/*   Updated: 2023/08/23 16:27:57 by Ektin Op Urims   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int	read_data_allocate_all_arrays(t_data *data)
 		return (1);
 	if (allocate_arr(data, (void ***)(&data->is_color_reserved), \
 								sizeof(char)))
+		return (1);
+	if (allocate_arr(data, (void ***)&data->proj_arr, sizeof(t_vec2)))
+		return (1);
+	if (allocate_arr(data, \
+		(void ***)&data->proj_points, sizeof(**data->proj_points)))
 		return (1);
 	return (0);
 }
@@ -86,7 +91,10 @@ void	treat_num_color(char const *num_comma_color, int i, int j, t_data *data)
 		data->is_color_reserved[i][j] = 1;
 	}
 	else
+	{
+		data->map_color[i][j] = 0xffffff;
 		data->is_color_reserved[i][j] = 0;
+	}
 	free_split(num_color);
 }
 

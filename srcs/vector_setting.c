@@ -6,7 +6,7 @@
 /*   By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:45:29 by Ektin Op Urims    #+#    #+#             */
-/*   Updated: 2023/08/21 17:21:59 by Ektin Op Urims   ###   ########.fr       */
+/*   Updated: 2023/09/15 13:31:31 by Ektin Op Urims   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	setvec_vec(t_vec *vec, t_vec const *src)
 	vec->x = src->x;
 	vec->y = src->y;
 	vec->z = src->z;
+	vec->k = src->k;
 }
