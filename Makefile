@@ -6,7 +6,7 @@
 #    By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 13:33:31 by Ektin Op Urims    #+#    #+#              #
-#    Updated: 2023/08/21 20:24:50 by Ektin Op Urims   ###   ########.fr        #
+#    Updated: 2023/09/22 14:36:08 by Ektin Op Urims   ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,23 @@ SRC = fdf.c \
 	vector_setting.c \
 	vector_operations.c \
 	events.c \
+	events2.c \
+	events3.c \
 	draw_line.c \
 	draw_line_aux.c \
 	adjust_points_for_draw_line.c \
 	adjust_points_for_draw_line_aux1.c \
 	adjust_points_for_draw_line_aux2.c \
+	ft_math.c \
 	read_input_aux.c \
 	read_input.c \
 	isoplane_setting.c \
 	isoplane_computing_part1.c \
 	isoplane_computing_part2.c \
+	isoplane_computing_part2b.c \
+	isoplane_computing_part3.c \
+	isoplane_change_params.c \
+	set_maxminxy_proj.c \
 
 HEADER = fdf.h
 
@@ -49,6 +56,7 @@ CFLAGS += -Wall -Wextra -Wpedantic -Werror
 LIBFLAGS += -lft -I$(LIBFTDIR) -L$(LIBFTDIR)
 LIBFLAGS += -lmlx -lXext -lX11 -I$(MINILIBXDIR) -L$(MINILIBXDIR)
 CFLAGS += $(LIBFLAGS)
+CFLAGS += -lm
 NORM = /bin/norminette
 
 all: $(NAME)

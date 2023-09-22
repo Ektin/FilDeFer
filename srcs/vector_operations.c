@@ -6,13 +6,13 @@
 /*   By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:45:29 by Ektin Op Urims    #+#    #+#             */
-/*   Updated: 2023/08/21 17:21:37 by Ektin Op Urims   ###   ########.fr       */
+/*   Updated: 2023/09/20 20:15:39 by Ektin Op Urims   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_vec	prod(double k, t_vec const vec)
+t_vec	prod(double k, t_vec vec)
 {
 	t_vec	res;
 
@@ -20,7 +20,7 @@ t_vec	prod(double k, t_vec const vec)
 	return (res);
 }
 
-t_vec	add(t_vec const v1, t_vec const v2)
+t_vec	add(t_vec v1, t_vec v2)
 {
 	t_vec	res;
 
@@ -28,7 +28,7 @@ t_vec	add(t_vec const v1, t_vec const v2)
 	return (res);
 }
 
-t_vec	diff(t_vec const v1, t_vec const v2)
+t_vec	diff(t_vec v1, t_vec v2)
 {
 	t_vec	res;
 
