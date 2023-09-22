@@ -6,7 +6,7 @@
 /*   By: Ektin Op Urims <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:57:03 by Ektin Op Urims    #+#    #+#             */
-/*   Updated: 2023/07/06 18:17:06 by Ektin Op Urims   ###   ########.fr       */
+/*   Updated: 2023/09/22 14:23:19 by Ektin Op Urims   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 int	get_class(char ch)
 {
-	if (ch == 'c')
+	if ('c' == ch)
 		return (1);
-	if (ch == 'd' || ch == 'i')
+	if ('d' == ch || 'i' == ch)
 		return (2);
-	if (ch == 'u')
+	if ('u' == ch)
 		return (3);
-	if (ch == 'o')
+	if ('o' == ch)
 		return (4);
-	if (ch == 'x')
+	if ('x' == ch)
 		return (5);
-	if (ch == 'X')
+	if ('X' == ch)
 		return (6);
-	if (ch == 's')
+	if ('s' == ch)
 		return (10);
-	if (ch == 'p')
+	if ('p' == ch)
 		return (11);
-	if (ch == '%')
+	if ('%' == ch)
 		return (100);
-	if (ch == '-')
+	if ('-' == ch)
 		return (1000);
-	if (ch == '0')
+	if ('0' == ch)
 		return (1003);
-	if (ch == '.')
+	if ('.' == ch)
 		return (1004);
 	return (0);
 }
@@ -66,7 +66,7 @@ int	treat_eight(char *ptr, char ch, t_uint *res, int fd)
 {
 	t_long_t	largenum;
 
-	if (ch == 's')
+	if ('s' == ch)
 	{
 		*res += ft_putstr_fd(ptr, fd);
 	}
